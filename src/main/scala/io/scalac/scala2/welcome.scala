@@ -6,7 +6,7 @@ object welcome {
   //
   // CHAT ROOM: scala2-introduction
   //
-  // https://discord.gg/FxhQX5b6
+  // https://discord.gg/W4ZCWRdNjx
   //
   // Please git clone and build:
   //
