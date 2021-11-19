@@ -491,8 +491,8 @@ package controlFlow {
      * Pattern matching on types
      */
     trait Shape
-    class Circle(val radius: Double)
-    class Square(val side: Double)
+    class Circle(val radius: Double) extends Shape
+    class Square(val side: Double) extends Shape
 
     def area(shape: Shape): Double =
       shape match {
@@ -744,7 +744,7 @@ package deconstruction {
      * 
      * Create an extractor object for the following class.
      */
-    class Notepad(notes: String*)
+    class Notepad(val notes: String*)
     object Notepad
 
     /**
