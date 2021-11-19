@@ -22,7 +22,7 @@ package javaInterop {
 
     def speak(): String
 
-    def show(): String = s"$age year old $kind named $name sais: `${speak()}`"
+    def show(): String = s"$age year old $kind named $name says: `${speak()}`"
   }
 
   /**
@@ -66,7 +66,7 @@ package javaInterop {
   }
 
   /**
-   * For convinience, we'll start both apps from here.
+   * For convenience, we'll start both apps from here.
    */
   object RunBothApps extends App {
     JavaApp.main(args)
