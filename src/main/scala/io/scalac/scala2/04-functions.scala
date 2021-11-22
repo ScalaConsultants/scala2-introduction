@@ -507,8 +507,8 @@ package composition {
     import examples._
 
     println(
-      s"""(triple compose inc)(2) = ${tripleInc(2)}
-         |(triple andThen inc)(2) = ${incTriple(2)}
+      s"""((triple andThen inc)(2) = ${tripleInc(2)}
+         |(triple compose inc)(2) = ${incTriple(2)}
          |
          |chain(ops)(2)           = ${incIncTriple(2)}
          |chain(ops.reverse)(2)   = ${tripleIncInc(2)}""".stripMargin
