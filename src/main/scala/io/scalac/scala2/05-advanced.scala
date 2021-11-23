@@ -183,7 +183,7 @@ package advanced {
     showSorted("original", list)
 
     val mapped = ???
-    showSorted("mapped", mapped)
+    show("mapped", mapped)
   }
 
   /**
@@ -199,7 +199,7 @@ package advanced {
     showSorted("original", list)
 
     val collected = ???
-    showSorted("collected", collected)
+    show("collected", collected)
   }
 
   /**
