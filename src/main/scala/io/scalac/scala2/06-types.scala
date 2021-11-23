@@ -273,7 +273,7 @@ package types {
   }
 
   /**
-   * Sum type is a type that is composed of diffrent possible values.
+   * Sum type is a type that is composed of different possible values.
    * 
    * The simplest possible example is an enumeration. Java enums are sum types.
    * Scala models sum types using inheritance.
@@ -326,11 +326,11 @@ package types {
        * Using `getOrElse` method set the dial to preferred temperature or default to 18 °C.
        */
       val preferenceResponse: Either[String, Double] = Left("Could not connect to preferences API.")
-      val temperatureDial: Int = ???  
+      val temperatureDial: Double = ???
     }
 
     /**
-     * The sealed modifier means that all subtypes of must be defined in the same file.
+     * The sealed modifier means that all its subtypes must be defined in the same file.
      * This limitation allows Scala to perform exhaustiveness checks when pattern matching.
      */
     object sealedTraits {
@@ -518,7 +518,16 @@ package types {
      * Rewrite `showEndOfDayBalance` from previous example using for comprehension.
      */
     object MonadicForComprehensionExample extends App {
-      import MonadCompositionExample.{payForBreakfast, payForLunch, earnTips, show}
+      // copying the code as you can't import from an App!
+      def pay(amount: Int, balance: Int): Monad[Int]  = Monad(balance - amount)
+      def earn(amount: Int, balance: Int): Monad[Int] = Monad(balance + amount)
+
+      def show(start: Int, end: Int): Unit =
+        println(s"Started the day with $start euro, finished with $end euro.")
+
+      val payForBreakfast = pay(8, _)
+      val payForLunch     = pay(16, _)
+      val earnTips        = earn(12, _)
 
       def showEndOfDayBalance(start: Int): Monad[Unit] = ???
 
